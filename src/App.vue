@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="row">
-      <div class="col-3 mt-5">
+    <div class="row pt-5">
+      <div class="col-3">
         <div class="card">
           <div class="card-body">
             <h2 class="display-5 text-center">Subir Imágen</h2>

@@ -1,3 +1,11 @@
+<script setup>
+function handleFileChange(event) {
+  var file = event.target.files[0];
+  var url = URL.createObjectURL(file);
+  document.querySelector('#preview').src = url;
+};
+</script>
+
 <template>
     <div class="col-3">
         <div class="card">
@@ -5,11 +13,11 @@
             <h2 class="display-5 text-center">Subir Imágen</h2>
             <form>
               <div class="form-group mb-3 text-center">
-                <img src="https://fakeimg.pl/200x200/?text=IMG" alt="vista previa" class="img-thumbnail">
+                <img src="https://fakeimg.pl/200x200/?text=IMG" alt="vista previa" id="preview" class="img-thumbnail">
               </div>
               <div class="form-group mb-3">
                 <label for="formFile" class="form-label">Imágen</label>
-                <input class="form-control" type="file" id="formFile">
+                <input class="form-control" type="file" id="formFile" @change="handleFileChange">
               </div>
               <div class="form-group mb-3">
                 <label for="title">Título</label>

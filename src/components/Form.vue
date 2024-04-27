@@ -1,4 +1,15 @@
 <script setup>
+import { ref } from 'vue';
+
+
+const title = ref('')
+const fileInput = ref('')
+
+function handleSubmit() {
+  console.log(title.value)
+  console.log(fileInput.value.files[0])
+}
+
 function handleFileChange(event) {
   var file = event.target.files[0];
   var url = URL.createObjectURL(file);
@@ -11,17 +22,17 @@ function handleFileChange(event) {
         <div class="card">
           <div class="card-body">
             <h2 class="display-5 text-center">Subir Imágen</h2>
-            <form>
+            <form @submit.prevent="handleSubmit">
               <div class="form-group mb-3 text-center">
                 <img src="https://fakeimg.pl/200x200/?text=IMG" alt="vista previa" id="preview" class="img-thumbnail">
               </div>
               <div class="form-group mb-3">
                 <label for="formFile" class="form-label">Imágen</label>
-                <input class="form-control" type="file" id="formFile" @change="handleFileChange">
+                <input class="form-control" type="file" id="formFile" @change="handleFileChange" ref="fileInput">
               </div>
               <div class="form-group mb-3">
                 <label for="title">Título</label>
-                <input type="text" class="form-control" id="title">
+                <input type="text" class="form-control" id="title" v-model="title">
               </div>
               <div class="form-group d-grid">
                 <button type="submit" class="btn btn-primary">Subir</button>

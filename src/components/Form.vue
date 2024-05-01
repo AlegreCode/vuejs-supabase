@@ -8,6 +8,7 @@ const fileInput = ref('')
 function handleSubmit() {
   console.log(title.value)
   console.log(fileInput.value.files[0])
+  document.querySelector('#preview').src = "https://fakeimg.pl/200x200/?text=IMG";
 }
 
 function handleFileChange(event) {
@@ -21,7 +22,7 @@ function handleFileChange(event) {
     <div class="col-3">
         <div class="card">
           <div class="card-body">
-            <h2 class="display-5 text-center">Subir Imágen</h2>
+            <h2 class="display-5 text-center">Subir Imagen</h2>
             <form @submit.prevent="handleSubmit">
               <div class="form-group mb-3 text-center">
                 <img src="https://fakeimg.pl/200x200/?text=IMG" alt="vista previa" id="preview" class="img-thumbnail">

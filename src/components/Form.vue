@@ -10,9 +10,8 @@ async function handleSubmit() {
   // console.log(title.value)
   // console.log(fileInput.value.files[0])
   const file = fileInput.value.files[0];
-  const { data, error } = await supabase.storage.from('gallery').upload('img', file);
+  const { data, error } = await supabase.storage.from('gallery').upload(file.name, file);
   console.log(data);
-  console.log(error);
   document.querySelector('#preview').src = "https://fakeimg.pl/200x200/?text=IMG";
 }
 

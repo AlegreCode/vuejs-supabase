@@ -7,12 +7,13 @@ const title = ref('')
 const fileInput = ref('')
 
 async function handleSubmit() {
-  // console.log(title.value)
-  // console.log(fileInput.value.files[0])
   const file = fileInput.value.files[0];
-  const { data, error } = await supabase.storage.from('gallery').upload(file.name, file);
+  const { data } = await supabase.storage.from('gallery').upload(file.name, file);
   console.log(data);
+  const { data: publicUrl } = await supabase.storage.from('gallery').getPublicUrl(file.name);
+  console.log(publicUrl);
   document.querySelector('#preview').src = "https://fakeimg.pl/200x200/?text=IMG";
+  title.value = "";
 }
 
 function handleFileChange(event) {

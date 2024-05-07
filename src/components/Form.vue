@@ -6,7 +6,7 @@ import { supabase } from '../supabase/supabase';
 const title = ref('')
 const fileInput = ref('')
 
-async function handleSubmit() {
+async function handleSubmit(e) {
   const file = fileInput.value.files[0];
   await supabase.storage.from('gallery').upload(file.name, file);
   const { data: { publicUrl } } = await supabase.storage.from('gallery').getPublicUrl(file.name);
@@ -17,7 +17,9 @@ async function handleSubmit() {
     title: title.value,
     url_image: publicUrl,
   },]).select();
-  title.value = "";
+
+  e.target.reset();
+  // title.value = "";
           
 }
 

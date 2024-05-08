@@ -19,7 +19,8 @@ async function handleSubmit(e) {
   },]).select();
 
   e.target.reset();
-  // title.value = "";
+  title.value = "";
+  fileInput.value = "";
           
 }
 

@@ -8,8 +8,8 @@ const fileInput = ref('')
 
 async function handleSubmit(e) {
   const file = fileInput.value.files[0];
-  await supabase.storage.from('gallery').upload(file.name, file);
-  const { data: { publicUrl } } = await supabase.storage.from('gallery').getPublicUrl(file.name);
+  await supabase.storage.from('images').upload(file.name, file);
+  const { data: { publicUrl } } = await supabase.storage.from('images').getPublicUrl(file.name);
   document.querySelector('#preview').src = "https://fakeimg.pl/200x200/?text=IMG";
   
   

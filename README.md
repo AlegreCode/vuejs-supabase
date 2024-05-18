@@ -1,7 +1,26 @@
-# Vue 3 + Vite
+# Tutorial VueJS - Supabase
+Integración de VueJS con Supabase
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Tabla de contenidos
 
-## Recommended IDE Setup
+* [Información general](#información-general)
+* [Tecnologías](#tecnologías)
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+
+## Información general
+
+Nos centraremos en integrar el alojamiento de Supabase en una aplicación Vue.js para crear un formulario de carga de imágenes y una galería que mostrará las imágenes almacenadas en Supabase.
+
+## Tecnologías
+
+* [VueJS](https://vuejs.org/)
+* [Supabase](https://supabase.com/)
+
+## Authors
+
+- [AlegreCode](https://github.com/AlegreCode)
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
